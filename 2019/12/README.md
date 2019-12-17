@@ -18,3 +18,10 @@
 	small pack, like 10 pack, each pack is a dir, and contains lots of files.
         we need tar.sh to tar sud-dir. 	
 ```
+
+## git
+### set user for each repo
+```
+	git config user.name "xxx"
+	git config user.email xxx@qq.com
+```
