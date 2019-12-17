@@ -6,7 +6,14 @@
 ## docker problem
 ```
 	for docker safety, so docker images should use non-root user to execute file.
-	alpine operating system seems can not execute file when as a non-root user
+	non-root user may cannot execute excutable file.
+	solution 1
+	chmod u+x file
+	solution 2
+	ldd file
+	see depend so lib, check if the user have the execute mode of the directory
+	chmod 0755 dir  
+	add r_x mode
 ```
 
 ## shell
