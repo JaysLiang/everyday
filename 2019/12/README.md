@@ -29,6 +29,38 @@
 ## git
 ### set user for each repo
 ```
+    you may have github account and gitlab account in the same OS
+    for each repo you can set as follows:
 	git config user.name "xxx"
 	git config user.email xxx@qq.com
 ```
+
+## mysql
+
+### transaction concurrency
+```
+transaction concurrency  execute sql one by one
+```
+```sql
+    CREATE TABLE `test` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `value` int(11) DEFAULT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1000000 DEFAULT CHARSET=utf8 MAX_ROW
+```
+| sequence|transaction1|transaction2|
+|--------|---------|-----|
+| 1|insert test (value) values(1)| |
+| 2| |insert test (value) values(2) |
+| 3|insert test (value) values(3)| |
+| 4| |insert test (value) values(4) |
+| 5| commit| |
+| 6| select * from test;<br>  result: id is 1 and 3|  |
+| 7|  |commit |
+| 8| |select * from test;<br>  result: id is 1 2 3 4  |
+
+### truncate
+```$xslt
+truncate can not rollback in transaction
+```
+
