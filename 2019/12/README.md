@@ -3,10 +3,11 @@
    log my learning
 ```
 
-## docker problem
+## docker
+### permisson deny or file does not exist
 ```
-	for docker safety, so docker images should use non-root user to execute file.
-	non-root user may cannot execute excutable file.
+	for safety, docker images should use non-root user to execute file.
+	sometimes, non-root user cannot execute excutable file.
 	solution 1
 	chmod u+x file
 	solution 2
@@ -15,15 +16,28 @@
 	chmod 0755 dir  
 	add r_x mode
 ```
+### COPY
+when COPY file, change file owner.
+```
+    # COPY --chown=user:usergroup files /dir   
+``` 
 
 ## shell
 
 ### tar
-
 ```
 	if there are too many small files, such as more than 200,000. we need to tar some 
 	small pack, like 10 pack, each pack is a dir, and contains lots of files.
         we need tar.sh to tar sud-dir. 	
+```
+### nc
+transfer file to you friend in local network
+```$xslt
+    # nc -l 11231 < filename
+```
+you friend can get this file by this cmd
+```$xslt
+    # nc ip 11231 > newfilename
 ```
 
 ## git
