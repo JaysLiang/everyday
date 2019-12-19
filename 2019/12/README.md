@@ -78,12 +78,21 @@ transaction concurrency  execute sql one by one
 truncate can not rollback in transaction
 ```
 
-##network
-###tcpdump
+## network
+
+### tcpdump
 tcpdump -vv host ip -w file.cap
 ```
 	this command to dump packet into file.cap
 ```
 then use tcpdump -r file.cap or wireshark file.cap to anylazye
+
+#### tcpdump
+icmp   
+```
+# ping www.baidu.com
+23:53:13.847245 IP (tos 0x0, ttl 55, id 26190, offset 0, flags [DF], proto ICMP (1), length 84)
+    14.215.177.39 > liangwr-Inspiron-7447: ICMP echo reply, id 4541, seq 2, length 64
+```
 
 
