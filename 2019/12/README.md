@@ -78,3 +78,12 @@ transaction concurrency  execute sql one by one
 truncate can not rollback in transaction
 ```
 
+##network
+###tcpdump
+tcpdump -vv host ip -w file.cap
+```
+	this command to dump packet into file.cap
+```
+then use tcpdump -r file.cap or wireshark file.cap to anylazye
+
+
