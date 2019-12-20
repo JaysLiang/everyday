@@ -94,5 +94,12 @@ icmp
 23:53:13.847245 IP (tos 0x0, ttl 55, id 26190, offset 0, flags [DF], proto ICMP (1), length 84)
     14.215.177.39 > liangwr-Inspiron-7447: ICMP echo reply, id 4541, seq 2, length 64
 ```
+### eth
 
+### ip
+#### IPv4 forwarding is disabled
+set net.ipv4.ip_forwarding=1
+```
+	vi /etc//etc/sysctl.conf
+```
 
